@@ -14,9 +14,9 @@ namespace Paevaplaan
     {
         public Teisipaev()
         {
-            string[] task = new string[] { "Tõusen püsti", "Söön", "Lähene kooli", "Lähene koju", "Söön", "Lähen magama" };
+            string[] tasks = new string[] { "Tõusen püsti", "Söön", "Lähene kooli", "Lähene koju", "Söön", "Lähen magama" };
             ListView list = new ListView();
-            list.ItemsSource = task;
+            list.ItemsSource = tasks;
             list.ItemSelected += List_IntemSelected;
             Content = new StackLayout{Children = { list } };
         }
@@ -34,7 +34,7 @@ namespace Paevaplaan
                 {
                     kell = "8:00";
                 }
-            }   await DisplayAlert(kell, Text, "Jah");
+            }   await DisplayAlert(kell,text,"Jah");
         }
     }
 }
