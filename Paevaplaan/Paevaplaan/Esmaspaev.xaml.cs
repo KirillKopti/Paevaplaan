@@ -14,7 +14,24 @@ namespace Paevaplaan
     {
         public Esmaspaev()
         {
-            InitializeComponent();
+            StackLayout stack = new StackLayout();
+            Button tagasi_btn = new Button { Text = "Tagasi" };
+            stack.Children.Add(tagasi_btn);
+            tagasi_btn.Clicked += new EventHandler(Batton_Clicked);
+
+            Content = stack;
+        }
+
+        private async void Batton_Clicked(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            switch (btn.Text)
+            {
+                case "Tagasi":
+                    await Navigation.PopAsync();
+                    await Navigation.PushAsync(new Esmaspaev());
+                    break;
+            }
         }
     }
 }
