@@ -34,7 +34,7 @@ namespace Paevaplaan
                 {
                     kell = "8:00";
                 }
-            }   await DisplayAlert(kell,text,"Jah");
+            }   
         }
     }
 }
