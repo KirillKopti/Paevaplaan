@@ -14,26 +14,51 @@ namespace Paevaplaan
     {
         public Teisipaev()
         {
-            string[] tasks = new string[] { "Tõusen püsti", "Söön", "Lähene kooli", "Lähene koju", "Söön", "Lähen magama" };
+            string[] tasks = new string[] { "Tõusen püsti", "Söön", "Lähene kooli", "Lähene koju", "Õhtu söök", "Lähen magama" };
             ListView list = new ListView();
             list.ItemsSource = tasks;
             list.ItemSelected += List_IntemSelected;
-            Content = new StackLayout{Children = { list } };
+            Button back = new Button { Text = "Tagasi", BackgroundColor = Color.Blue, ImageSource = "back.ping" };
+            back.Clicked += Back_Clicked;
+            Content = new StackLayout { Children = { list, back } };
         }
+
+        private async void Back_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
         string kell;
         private async void List_IntemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem !=null)
             {
                 string text = e.SelectedItem.ToString();
-                if (e.SelectedItemIndex==0)
+                if (e.SelectedItemIndex==0)//Tõusen püsti
                 {
-                    kell = "7:00";
+                    kell = "6:50";
                 }
-                else if (e.SelectedItemIndex==1)
+                else if (e.SelectedItemIndex==1)//Söön
                 {
-                    kell = "8:00";
+                    kell = "7:15";
                 }
+                else if (e.SelectedItemIndex==2)//Lähen kooli
+                {
+                    kell = "8:30";
+                }
+                else if (e.SelectedItemIndex == 3)
+                {
+                    kell = "15;05";
+                }
+                else if (e.SelectedItemIndex == 4)
+                {
+                    kell = "17;45";
+                }
+                else if (e.SelectedItemIndex == 5)
+                {
+                    kell = "22:00";
+                }
+
             }   
         }
     }

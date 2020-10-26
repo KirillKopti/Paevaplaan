@@ -18,7 +18,9 @@ namespace Paevaplaan
             Button tagasi_btn = new Button { Text = "Tagasi" };
             stack.Children.Add(tagasi_btn);
             tagasi_btn.Clicked += new EventHandler(Batton_Clicked);
-
+            Button edasi_btn = new Button { Text = "Tagasi" };
+            stack.Children.Add(tagasi_btn);
+            tagasi_btn.Clicked += new EventHandler(Batton_Clicked);
             Content = stack;
         }
 
