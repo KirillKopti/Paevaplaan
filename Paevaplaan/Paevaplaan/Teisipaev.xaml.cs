@@ -31,18 +31,18 @@ namespace Paevaplaan
         string kell;
         private async void List_IntemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (e.SelectedItem !=null)
+            if (e.SelectedItem != null)
             {
                 string text = e.SelectedItem.ToString();
-                if (e.SelectedItemIndex==0)//Tõusen püsti
+                if (e.SelectedItemIndex == 0)//Tõusen püsti
                 {
                     kell = "6:50";
                 }
-                else if (e.SelectedItemIndex==1)//Söön
+                else if (e.SelectedItemIndex == 1)//Söön
                 {
                     kell = "7:15";
                 }
-                else if (e.SelectedItemIndex==2)//Lähen kooli
+                else if (e.SelectedItemIndex == 2)//Lähen kooli
                 {
                     kell = "8:30";
                 }
@@ -58,7 +58,7 @@ namespace Paevaplaan
                 {
                     kell = "22:00";
                 }
-
+                await DisplayAlert(kell, text, "jah");
             }   
         }
     }
