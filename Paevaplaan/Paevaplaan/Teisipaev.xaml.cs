@@ -46,15 +46,15 @@ namespace Paevaplaan
                 {
                     kell = "8:30";
                 }
-                else if (e.SelectedItemIndex == 3)
+                else if (e.SelectedItemIndex == 3)//Lähen koju
                 {
                     kell = "15;05";
                 }
-                else if (e.SelectedItemIndex == 4)
+                else if (e.SelectedItemIndex == 4)//Õhtu söök
                 {
                     kell = "17;45";
                 }
-                else if (e.SelectedItemIndex == 5)
+                else if (e.SelectedItemIndex == 5)//Lähen magama
                 {
                     kell = "22:00";
                 }
