@@ -27,7 +27,7 @@ namespace Paevaplaan
 
         private async void Next_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page());
+            await Navigation.PushAsync(new MainPage());
         }
 
         private async void Back_Clicked(object sender, EventArgs e)
