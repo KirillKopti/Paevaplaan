@@ -20,7 +20,14 @@ namespace Paevaplaan
             list.ItemSelected += List_IntemSelected;
             Button back = new Button { Text = "Tagasi", BackgroundColor = Color.Blue, ImageSource = "back.ping" };
             back.Clicked += Back_Clicked;
-            Content = new StackLayout { Children = { list, back } };
+            Button next = new Button { Text = "Edasi", BackgroundColor = Color.White, ImageSource = "next.ping" };
+            next.Clicked += Next_Clicked;
+            Content = new StackLayout { Children = { list, back, next } };
+        }
+
+        private async void Next_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Laupaev());
         }
 
         private async void Back_Clicked(object sender, EventArgs e)
